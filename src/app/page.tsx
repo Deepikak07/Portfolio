@@ -251,49 +251,49 @@ export default function PortfolioPage() {
                 <Sparkles className="w-3.5 h-3.5 text-brand-cyan" /> Recruiter-Friendly Personal Portfolio
               </div>
               
-              <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-text-main leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.02em] text-text-main leading-[0.95] max-w-3xl text-balance">
                 Hi, I'm <span className="gradient-text">Deepika K</span>
               </h1>
               
               {/* Dynamic typing role container */}
-              <div className="h-14 sm:h-10">
-                <span className="typing-cursor bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent font-bold text-2xl sm:text-3xl block">
+              <div className="min-h-14 sm:min-h-12">
+                <span className="typing-cursor bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent font-semibold text-xl sm:text-2xl md:text-[1.75rem] leading-tight block max-w-2xl">
                   {roleText}
                 </span>
               </div>
               
-              <p className="text-base sm:text-lg text-text-sub leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-text-sub leading-8 max-w-2xl">
                 Aspiring Computer Science & Data Science student with a strong foundation in programming, analytics, and machine learning models. Passionate about applying academic theory and practical internship experience to develop intelligent software tools.
               </p>
               
               {/* Stats Counters */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 pb-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 pt-2 pb-4">
                 {stats.map((stat, idx) => (
-                  <div key={idx} className="border-l border-border-glass pl-4 space-y-1">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-text-main block tracking-tight">
+                  <div key={idx} className="rounded-2xl border border-border-glass/70 bg-white/5 px-4 py-4 space-y-1.5">
+                    <span className="text-xl sm:text-2xl md:text-3xl font-bold text-text-main block tracking-tight">
                       {stat.value}
                     </span>
-                    <span className="text-xs text-text-sub font-medium uppercase tracking-wider block">
+                    <span className="text-[11px] sm:text-xs text-text-sub font-semibold uppercase tracking-[0.2em] block">
                       {stat.label}
                     </span>
                   </div>
                 ))}
               </div>
               
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
                 <a
                   href="#projects"
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-brand-blue hover:opacity-90 text-white font-semibold px-8 py-3.5 rounded-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2 text-sm shadow-lg shadow-brand-blue/20 cursor-pointer"
+                  className="bg-brand-blue hover:opacity-90 text-white font-semibold px-6 sm:px-8 py-3.5 rounded-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-sm shadow-lg shadow-brand-blue/20 cursor-pointer"
                 >
                   View Projects <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link
                   href="/resume"
-                  className="bg-white/5 hover:bg-white/10 text-text-main font-semibold px-8 py-3.5 rounded-xl border border-border-glass transition-all flex items-center gap-2 text-sm cursor-pointer hover:scale-[1.02] active:scale-95"
+                  className="bg-white/5 hover:bg-white/10 text-text-main font-semibold px-6 sm:px-8 py-3.5 rounded-xl border border-border-glass transition-all flex items-center justify-center gap-2 text-sm cursor-pointer hover:scale-[1.02] active:scale-95"
                 >
                   <FileText className="w-4 h-4 text-brand-purple" /> Download Resume
                 </Link>
@@ -303,7 +303,7 @@ export default function PortfolioPage() {
                     e.preventDefault();
                     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="px-6 py-3.5 rounded-xl text-sm font-semibold text-text-sub hover:text-text-main hover:bg-white/5 transition-colors cursor-pointer"
+                  className="px-6 py-3.5 rounded-xl text-sm font-semibold text-text-sub hover:text-text-main hover:bg-white/5 transition-colors cursor-pointer text-center"
                 >
                   Contact Me
                 </a>
@@ -315,7 +315,7 @@ export default function PortfolioPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-5 flex justify-center items-center relative"
+              className="lg:col-span-5 flex justify-center items-center relative mt-8 lg:mt-0"
             >
               {/* Double border glowing card container */}
               <div className="relative w-72 sm:w-80 aspect-[3/4] rounded-3xl p-1.5 gradient-bg shadow-2xl shadow-brand-blue/20 group">
@@ -350,10 +350,10 @@ export default function PortfolioPage() {
               variants={fadeInUp}
               className="text-center max-w-3xl mx-auto space-y-4 mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-main">
+              <h2 className="section-heading font-semibold tracking-[-0.02em] text-text-main">
                 About <span className="bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent">Me</span>
               </h2>
-              <p className="text-text-sub text-lg leading-relaxed">
+              <p className="section-subtitle text-text-sub max-w-2xl mx-auto">
                 Objective summary, soft skills, languages, and personal hobbies.
               </p>
             </motion.div>
@@ -371,19 +371,19 @@ export default function PortfolioPage() {
                 <h3 className="text-2xl font-bold mb-6 text-text-main flex items-center gap-2">
                   <Terminal className="w-5 h-5 text-brand-cyan" /> Objective
                 </h3>
-                <p className="text-text-sub leading-relaxed mb-6 text-justify text-base">
+                <p className="text-text-sub leading-8 mb-6 text-left sm:text-justify text-base">
                   Aspiring Computer Science and Data Science student with a strong foundation in programming, data analysis, and machine learning. Passionate about exploring the intersection of technology and data to solve real-world problems. Seeking an opportunity to apply academic knowledge, enhance technical expertise, and contribute to meaningful projects in a dynamic and growth-oriented environment.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 pt-6 border-t border-border-glass">
                   <div>
-                    <h4 className="text-xs font-bold text-text-sub uppercase tracking-wider mb-2">Location</h4>
-                    <p className="text-sm font-semibold text-text-main flex items-center gap-1.5">
+                    <h4 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em] mb-2">Location</h4>
+                    <p className="text-sm font-semibold text-text-main flex items-center gap-1.5 leading-7">
                       <MapPin className="w-4 h-4 text-brand-blue" /> Anupahalli, Hoskote, Bangalore Rural
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-text-sub uppercase tracking-wider mb-2">Technical Core</h4>
-                    <p className="text-sm font-semibold text-text-main flex items-center gap-1.5">
+                    <h4 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em] mb-2">Technical Core</h4>
+                    <p className="text-sm font-semibold text-text-main flex items-center gap-1.5 leading-7">
                       <Sparkles className="w-4 h-4 text-brand-purple" /> Python, ML Models, Data Analytics
                     </p>
                   </div>
@@ -450,7 +450,7 @@ export default function PortfolioPage() {
                         0{index + 1}
                       </div>
                       <h4 className="font-bold text-sm text-text-main mb-2">{skill.name}</h4>
-                      <p className="text-xs text-text-sub leading-relaxed">{skill.desc}</p>
+                      <p className="text-xs sm:text-sm text-text-sub leading-7">{skill.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -469,10 +469,10 @@ export default function PortfolioPage() {
               variants={fadeInUp}
               className="text-center max-w-3xl mx-auto space-y-4 mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-main">
+              <h2 className="section-heading font-semibold tracking-[-0.02em] text-text-main">
                 Technical <span className="bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent">Skills</span>
               </h2>
-              <p className="text-text-sub text-lg leading-relaxed">
+              <p className="section-subtitle text-text-sub max-w-2xl mx-auto">
                 Structured categories of programming tools, development frameworks, and database packages.
               </p>
             </motion.div>
@@ -534,10 +534,10 @@ export default function PortfolioPage() {
               variants={fadeInUp}
               className="text-center max-w-3xl mx-auto space-y-4 mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-main">
+              <h2 className="section-heading font-semibold tracking-[-0.02em] text-text-main">
                 Internship <span className="bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent">Experience</span>
               </h2>
-              <p className="text-text-sub text-lg leading-relaxed">
+              <p className="section-subtitle text-text-sub max-w-2xl mx-auto">
                 Applied classroom concepts to practical settings during internship cycles.
               </p>
             </motion.div>
@@ -565,7 +565,7 @@ export default function PortfolioPage() {
                   </span>
                 </div>
 
-                <ul className="list-disc list-inside space-y-2 text-sm text-text-sub leading-relaxed pt-2">
+                <ul className="list-disc list-inside space-y-2 text-sm text-text-sub leading-7 pt-2">
                   {experience.points.map((pt, index) => (
                     <li key={index} className="text-justify">{pt}</li>
                   ))}
@@ -585,10 +585,10 @@ export default function PortfolioPage() {
               variants={fadeInUp}
               className="text-center max-w-3xl mx-auto space-y-4 mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-main">
+              <h2 className="section-heading font-semibold tracking-[-0.02em] text-text-main">
                 Featured <span className="bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent">Projects</span>
               </h2>
-              <p className="text-text-sub text-lg leading-relaxed">
+              <p className="section-subtitle text-text-sub max-w-2xl mx-auto">
                 Applied AI systems and Machine Learning frameworks to complete core functional project models.
               </p>
             </motion.div>
@@ -634,13 +634,13 @@ export default function PortfolioPage() {
                         {proj.title}
                       </h3>
                       
-                      <p className="text-sm text-text-sub leading-relaxed text-justify">
+                      <p className="text-sm text-text-sub leading-7 text-left sm:text-justify">
                         {proj.desc}
                       </p>
                     </div>
 
                     <div className="mt-6 pt-5 border-t border-border-glass">
-                      <h4 className="text-xs font-bold text-text-sub uppercase tracking-wider mb-2.5">Technologies Used</h4>
+                      <h4 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em] mb-2.5">Technologies Used</h4>
                       <div className="flex flex-wrap gap-2">
                         {proj.techs.map((tech) => (
                           <span key={tech} className="px-2.5 py-1 rounded-lg bg-brand-purple/10 border border-brand-purple/20 text-xs font-semibold text-brand-purple">
@@ -666,10 +666,10 @@ export default function PortfolioPage() {
               variants={fadeInUp}
               className="text-center max-w-3xl mx-auto space-y-4 mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-main">
+              <h2 className="section-heading font-semibold tracking-[-0.02em] text-text-main">
                 Education <span className="bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent">Timeline</span>
               </h2>
-              <p className="text-text-sub text-lg leading-relaxed">
+              <p className="section-subtitle text-text-sub max-w-2xl mx-auto">
                 Academic track, performance details, and institution backgrounds.
               </p>
             </motion.div>
@@ -716,10 +716,10 @@ export default function PortfolioPage() {
               variants={fadeInUp}
               className="text-center max-w-3xl mx-auto space-y-4 mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-main">
+              <h2 className="section-heading font-semibold tracking-[-0.02em] text-text-main">
                 Achievements & <span className="bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent">Certifications</span>
               </h2>
-              <p className="text-text-sub text-lg leading-relaxed">
+              <p className="section-subtitle text-text-sub max-w-2xl mx-auto">
                 Hackathons, presentations, credentials, and supplementary training programs.
               </p>
             </motion.div>
@@ -738,7 +738,7 @@ export default function PortfolioPage() {
                     <Award className="w-5 h-5 text-brand-purple" />
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-xs font-bold text-text-sub uppercase tracking-wider">Credential 0{idx + 1}</h3>
+                    <h3 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em]">Credential 0{idx + 1}</h3>
                     <p className="text-sm font-semibold text-text-main leading-relaxed">
                       {ach}
                     </p>
@@ -759,10 +759,10 @@ export default function PortfolioPage() {
               variants={fadeInUp}
               className="text-center max-w-3xl mx-auto space-y-4 mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-main">
+              <h2 className="section-heading font-semibold tracking-[-0.02em] text-text-main">
                 Get In <span className="bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan bg-clip-text text-transparent">Touch</span>
               </h2>
-              <p className="text-text-sub text-lg leading-relaxed">
+              <p className="section-subtitle text-text-sub max-w-2xl mx-auto">
                 Reach out to discuss academic programs, research work, or internships.
               </p>
             </motion.div>
@@ -785,7 +785,7 @@ export default function PortfolioPage() {
                         <Phone className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-text-sub uppercase tracking-wider">Phone</h4>
+                        <h4 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em]">Phone</h4>
                         <p className="text-sm font-semibold text-text-main mt-0.5">+91 9019987641</p>
                       </div>
                     </div>
@@ -795,7 +795,7 @@ export default function PortfolioPage() {
                         <Mail className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-text-sub uppercase tracking-wider">Email</h4>
+                        <h4 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em]">Email</h4>
                         <a href="mailto:deepika.kraj2005@gmail.com" className="text-sm font-semibold text-text-main hover:text-brand-purple transition-colors mt-0.5 block">
                           deepika.kraj2005@gmail.com
                         </a>
@@ -807,8 +807,8 @@ export default function PortfolioPage() {
                         <MapPin className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-text-sub uppercase tracking-wider">Address</h4>
-                        <p className="text-sm font-semibold text-text-main mt-0.5 leading-relaxed">
+                        <h4 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em]">Address</h4>
+                        <p className="text-sm font-semibold text-text-main mt-0.5 leading-7">
                           Anupahalli (village), Hoskote(Tq),<br />Bangalore (rural dist)
                         </p>
                       </div>
@@ -818,7 +818,7 @@ export default function PortfolioPage() {
 
                 {/* Social Connect buttons */}
                 <div className="pt-8 border-t border-border-glass mt-8">
-                  <h4 className="text-xs font-bold text-text-sub uppercase tracking-wider mb-4">Professional Networks</h4>
+                  <h4 className="text-xs font-bold text-text-sub uppercase tracking-[0.2em] mb-4">Professional Networks</h4>
                   <div className="flex gap-3">
                     <a
                       href="https://www.linkedin.com/in/deepika-deepu-710522310"
@@ -858,7 +858,7 @@ export default function PortfolioPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full bg-white/5 border border-border-glass rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/50 text-text-main transition-all"
+                        className="w-full bg-white/5 border border-border-glass rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/50 text-text-main transition-all"
                         placeholder="Your full name"
                       />
                     </div>
@@ -873,7 +873,7 @@ export default function PortfolioPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full bg-white/5 border border-border-glass rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-purple/50 text-text-main transition-all"
+                        className="w-full bg-white/5 border border-border-glass rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-purple/50 text-text-main transition-all"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -887,7 +887,7 @@ export default function PortfolioPage() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full bg-bg-secondary border border-border-glass rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 text-text-main transition-all"
+                      className="w-full bg-bg-secondary border border-border-glass rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 text-text-main transition-all"
                     >
                       <option value="Collaboration">Project Collaboration</option>
                       <option value="Internship">Internship Opportunity</option>
@@ -906,7 +906,7 @@ export default function PortfolioPage() {
                       value={formData.notes}
                       onChange={handleInputChange}
                       rows={5}
-                      className="w-full bg-white/5 border border-border-glass rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-purple/50 text-text-main transition-all resize-none"
+                      className="w-full bg-white/5 border border-border-glass rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-purple/50 text-text-main transition-all resize-none"
                       placeholder="Detail your message here..."
                     />
                   </div>
@@ -914,7 +914,7 @@ export default function PortfolioPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-brand-blue text-white font-semibold py-3.5 rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-blue/20 disabled:opacity-75 cursor-pointer text-sm"
+                    className="w-full bg-brand-blue text-white font-semibold py-3.5 rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-blue/20 disabled:opacity-75 cursor-pointer text-sm hover:scale-[1.01]"
                   >
                     {isSubmitting ? "Sending..." : (
                       <>Send Message <Send className="w-4 h-4" /></>
@@ -936,7 +936,7 @@ export default function PortfolioPage() {
               <span className="font-bold tracking-wider text-text-main text-sm">DEEPIKA K</span>
             </div>
             
-            <p className="text-xs text-text-sub leading-relaxed max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-text-sub leading-7 max-w-md mx-auto">
               Built as a premium, responsive portfolio website, representing academic and practical technical records. All details are extracted from verified CV documents.
             </p>
 
