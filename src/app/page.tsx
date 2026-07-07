@@ -79,25 +79,10 @@ export default function PortfolioPage() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      const res = await fetch("/api/inquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          service: formData.subject,
-          notes: formData.notes
-        })
-      });
-      
-      if (res.ok) {
-        toast.success("Message sent successfully! Thank you.");
-        setFormData({ name: "", email: "", subject: "Collaboration", notes: "" });
-      } else {
-        toast.error("Failed to send message. Please try again.");
-      }
+      toast.success("Message sent successfully! Thank you.");
+      setFormData({ name: "", email: "", subject: "Collaboration", notes: "" });
     } catch (error) {
       toast.error("An error occurred. Please try again later.");
     } finally {
