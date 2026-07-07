@@ -11,18 +11,39 @@ export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
+    const sections = navItems.map((item) => item.href.replace("#", ""));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      { threshold: [0.2, 0.4, 0.6], rootMargin: "-15% 0px -40% 0px" }
+    );
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const navItems = [
@@ -78,7 +99,11 @@ export default function Navigation() {
                 key={item.name}
                 href={getHref(item.href)}
                 onClick={(e) => handleLinkClick(e, item.href)}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-text-sub hover:text-text-main hover:bg-white/5 transition-all duration-200"
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  activeSection === item.href.replace("#", "")
+                    ? "text-text-main bg-white/10 shadow-sm"
+                    : "text-text-sub hover:text-text-main hover:bg-white/5"
+                }`}
               >
                 {item.name}
               </a>
@@ -129,7 +154,11 @@ export default function Navigation() {
                   key={item.name}
                   href={getHref(item.href)}
                   onClick={(e) => handleLinkClick(e, item.href)}
-                  className="flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium text-text-sub hover:text-text-main hover:bg-white/5 transition-all"
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all ${
+                  activeSection === item.href.replace("#", "")
+                    ? "text-text-main bg-white/10"
+                    : "text-text-sub hover:text-text-main hover:bg-white/5"
+                }`}
                 >
                   {item.name}
                   <ChevronRight className="w-4 h-4 text-text-sub/50" />

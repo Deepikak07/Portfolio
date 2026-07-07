@@ -234,12 +234,12 @@ export default function PortfolioPage() {
       
       <PortfolioContainer>
         {/* HERO SECTION */}
-        <section id="hero" className="min-h-screen flex items-center justify-center pt-24 pb-16 relative overflow-hidden">
+        <section id="hero" className="min-h-screen flex items-center justify-center pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 lg:pb-28 relative overflow-hidden">
           {/* Ambient light effects */}
           <div className="absolute top-[20%] right-[10%] w-[350px] aspect-square rounded-full bg-brand-cyan/15 blur-[100px] pointer-events-none animate-pulse-glow" />
           <div className="absolute bottom-[20%] left-[5%] w-[300px] aspect-square rounded-full bg-brand-purple/10 blur-[90px] pointer-events-none animate-pulse-glow" style={{ animationDelay: "3s" }} />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full relative z-10">
             {/* Left Hero column */}
             <motion.div 
               initial="hidden"
@@ -318,7 +318,7 @@ export default function PortfolioPage() {
               className="lg:col-span-5 flex justify-center items-center relative mt-8 lg:mt-0"
             >
               {/* Double border glowing card container */}
-              <div className="relative w-72 sm:w-80 aspect-[3/4] rounded-3xl p-1.5 gradient-bg shadow-2xl shadow-brand-blue/20 group">
+              <div className="relative w-64 sm:w-72 md:w-80 lg:w-[22rem] aspect-[3/4] rounded-[28px] p-1.5 gradient-bg shadow-2xl shadow-brand-blue/20 group">
                 <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-brand-blue via-brand-purple to-brand-cyan opacity-40 blur-xl group-hover:opacity-60 transition-opacity duration-500" />
                 
                 {/* Photo masking block */}
@@ -341,7 +341,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* ABOUT ME SECTION */}
-        <section id="about" className="py-20 border-t border-border-glass/40">
+        <section id="about" className="section-shell border-t border-border-glass/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -460,7 +460,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* TECH SKILLS SECTION */}
-        <section id="skills" className="py-20 border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
+        <section id="skills" className="section-shell border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -525,7 +525,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* EXPERIENCE SECTION */}
-        <section id="experience" className="py-20 border-t border-border-glass/40">
+        <section id="experience" className="section-shell border-t border-border-glass/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -576,7 +576,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* PROJECTS SECTION */}
-        <section id="projects" className="py-20 border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
+        <section id="projects" className="section-shell border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -657,7 +657,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* EDUCATION SECTION */}
-        <section id="education" className="py-20 border-t border-border-glass/40">
+        <section id="education" className="section-shell border-t border-border-glass/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -707,7 +707,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* ACHIEVEMENTS & CERTIFICATIONS SECTION */}
-        <section id="certifications" className="py-20 border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
+        <section id="certifications" className="section-shell border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -750,7 +750,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* CONTACT SECTION */}
-        <section id="contact" className="py-20 border-t border-border-glass/40">
+        <section id="contact" className="section-shell border-t border-border-glass/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -927,7 +927,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* FOOTER */}
-        <footer className="py-12 border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
+        <footer className="section-shell-tight border-t border-border-glass/40 bg-white/[0.005] dark:bg-black/[0.005]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div className="flex items-center justify-center gap-2">
               <div className="bg-brand-blue/15 p-2 rounded-xl border border-brand-blue/20">
